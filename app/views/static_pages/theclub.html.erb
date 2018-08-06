@@ -1,0 +1,12 @@
+
+
+<h1>The Private Club</h1>
+
+<hr>
+<% @users.each do |user| %>
+  <p>First Name : <%= user.first_name %></p>
+  <p>Last Name : <%= user.last_name %></p>
+  <p>Email : <%= link_to user.email, user_path(user.id) %></p>
+
+  <hr>
+<% end %>

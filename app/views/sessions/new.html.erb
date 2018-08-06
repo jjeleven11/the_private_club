@@ -1,0 +1,36 @@
+
+<h1>Log in</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :first_name, 'First Name: ' %>
+    <%= f.text_field :first_name, class: 'form-control w-50' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name, 'Last Name: ' %>
+    <%= f.text_field :last_name, class: 'form-control w-50' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, 'Email: ' %>
+    <%= f.text_field :email, class: 'form-control w-50', placeholder: 'Your email' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, 'Password' %>
+    <%= f.password_field :password, class: 'form-control w-50' %>
+  </div>
+
+  <%= f.label :remember_me, class: "checkbox inline" do %>
+    <%= f.check_box :remember_me %>
+    <span><%= link_to 'Remember me', 'https://www.youtube.com/watch?v=fKKNPLowteY', target: :blank %> on this computer</span>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit 'Sign up now!', class: 'btn btn-lg btn-primary btn-block w-50' %>
+  </div>
+<% end %>
+
+<p>Don't have any account? Sign in by clicking <%= link_to 'here', signup_path %>!</p>
